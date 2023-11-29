@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> <!-- Include jQuery -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="style_adminPage.css" rel="stylesheet" initial-scale=1.0> -->
+    <!-- <script src="display_connectPage.js"></script> -->
+    <script src="script_admin.js"></script>
+    <script src="display_connectPage.js"></script>
+    <!-- <script src="script.js"></script> -->
+
+
+    <title>Admin Page</title>
+
+</head>
+
+
+  <header class="container-fluid">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="index.html"> <h1>JobBoard</h2></a>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li> 
+          </ul>
+          <form class="d-flex" role="search">
+            <div class="d-flex flex-row-reverse bd-highlight" style="margin-left: 1vh;">
+              <button id = "statuLog" class="btn btn-outline-success" type="submit"></button>
+            </div>
+          </form>
+          
+        </div>
+      </div>
+      
+    </nav>
+    
+  </header>
+
+<body>
+  <section class="form form-100 gradient-form" style="background-color: rgb(8, 8, 8); padding: 4vh; margin: 5vh;">
+      <div>
+        <h1 style="color: rgba(253, 252, 251, 0.644);">Data Base Monitoring</h1>
+
+        <br><br>
+        <section style="color: rgba(253, 252, 251, 0.644);" id = "tableSection"></section>
+      </div>
+  </section>
+
+  <section class="form form-100 gradient-form" style="background-color: rgb(24, 30, 102)">    
+
+    <!-- Add peoples form -->
+    <div id="form_peoples" tabindex="-1" style="display:none">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="myform bg-dark">
+              
+              <section class="row form form-100 gradient-form" style="background-color: rgb(42, 50, 151)">
+                <div class="container col-sm-12 card rounded-5 card-body p-lg-8 mw-md-6 text-black justify-content-center align-items-center h-10" style="height: 700px;">
+                  <div class="text-center">
+                    <form id = "add_people_form" style="display:block">
+                      <label for="firstName">First Name (Required):</label>
+                      <input type="text" id="firstName" name="firstName" required ><br>
+                      <br>
+                      <label for="lastName">Last Name (Required):</label>
+                      <input type="text" id="lastName" name="lastName" required ><br>
+                      <br>
+                      <label for="statu">Status : </label>
+                      <select name="statu" id="statu">
+                          <option value="candidat">Candidat</option>
+                          <option value="entreprise">Entreprise</option>
+                          <option value="admin">Administrateur</option>
+                      </select><br>
+                      <br>
+                      <label for="tel">Téléphone (Required):</label>
+                      <input type="tel" id="tel" name="tel" minlength="10" maxlength="10" required ><br>
+                      <br>
+                      <label for="email">Email (Required):</label>
+                      <input type="email" id="email" name="email" required ><br>
+                      <br>
+                      <label for="mdp1">Mot de passe (Required):</label>
+                      <input type="password" id="mdp1" name="mdp1" required><br>
+                      <span class="error-message" id="mdpError"></span><br>
+                      <br>
+                      <label for="mdp2"> Confirmer Mot de passe (Required):</label>
+                      <input type="password" id="mdp2" name="mdp2" required><br>
+                      <br>
+                      <button id="addPeople">ADD</button>
+                    </form>
+                  </div>
+                </div>
+              </section>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add companies form -->
+    <div id="form_companies" tabindex="-1" style="display:none">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="myform bg-dark">
+            
+            <section class="row form form-100 gradient-form" style="background-color: rgb(42, 50, 151)">
+              <div class="container col-sm-12 card rounded-5 card-body p-lg-8 mw-md-6 text-black justify-content-center align-items-center h-10" style="height: 700px;">
+                <div class="text-center">
+                  <form id = "add_companies_form" style="display:block">
+                    <label for="name">Nom (Required):</label>
+                    <input type="text" id="name" name="name" required ><br>
+                    <br>
+                    <label for="locationAdress">Localisation (Required):</label>
+                    <input type="text" id="locationAdress" name="locationAdress" required ><br>
+                    <br>
+                    <label for="sector">Secteur (Required):</label>
+                    <input type="text" id="sector" name="locationAdress" required ><br>
+                    <br>
+                    <button id="addCompany">ADD</button>
+                  </form>
+                </div>
+              </div>
+            </section>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Add advertisement form -->
+  <div id="form_advertisement" tabindex="-1" style="display:none">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="myform bg-dark">
+          
+          <section class="row form form-100 gradient-form" style="background-color: rgb(42, 50, 151)">
+            <div class="container col-sm-12 card rounded-5 card-body p-lg-8 mw-md-6 text-black justify-content-center align-items-center h-10" style="height: 700px;">
+              <div class="text-center">
+                <form id = "add_advertisement_form" style="display:block">
+                  <label for="titleAd">Title (Required):</label>
+                  <input type="text" id="titleAd" name="titleAd" required ><br>
+                  <br>
+                  <label for="contract">Contrat (Required):</label>
+                  <input type="text" id="contract" name="contract" required ><br>
+                  <br>
+                  <label for="shortDescription">Courte description (Required):</label>
+                  <input type="text" id="shortDescription" name="shortDescription" required ><br>
+                  <br>
+                  <label for="detailDescription">Description détaillée (Required):</label>
+                  <input type="text" id="detailDescription" name="detailDescription" required ><br>
+                  <br>
+                  <label for="id_companies">ID de la compagnie proposant ce poste  (Required):</label>
+                  <input type="text" id="id_companies" name="id_companies" required ><br>
+                  <br>
+                  <button id="addAdvertisement">ADD</button>
+                </form>
+              </div>
+            </div>
+          </section>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Add advertisement form -->
+  <div id="form_application" tabindex="-1" style="display:none">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="myform bg-dark">
+          
+          <section class="row form form-100 gradient-form" style="background-color: rgb(42, 50, 151)">
+            <div class="container col-sm-12 card rounded-5 card-body p-lg-8 mw-md-6 text-black justify-content-center align-items-center h-10" style="height: 700px;">
+              <div class="text-center">
+                <form id = "add_application_form" style="display:block">
+                  <label for="emailSent">Message envoyé à l'employeur:</label>
+                  <input type="text" id="emailSent" name="emailSent" required ><br>
+                  <br>
+                  <label for="adID">ID de l'annonce canidatée:</label>
+                  <input type="text" id="adID" name="adID" required ><br>
+                  <br>
+                  <label for="peopleID">Id du candidat</label>
+                  <input type="text" id="peopleID" name="peopleID" required ><br>
+                  <br>
+                  <button id="addApplication">ADD</button>
+                </form>
+              </div>
+            </div>
+          </section>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </section>
+  
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> <!-- Include jQuery -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script_connect.js"></script>
+    <script src="display_connectPage.js"></script>
+
+<header class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="index.html"> <h1>JobBoard</h2></a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+
+        </ul>
+        <form class="d-flex" role="search">
+            <div class="d-flex flex-row-reverse bd-highlight" style="margin-left: 1vh;">
+              <button id = "statuLog" class="btn btn-outline-success" type="submit"></button>
+            </div>
+          </form>
+      </div>
+    </div>
+  </nav>
+</header>
+<body>
+
+
+    <section class="form form-100 gradient-form" style="background-color: rgb(24, 30, 102)">
+        <div class="container py-5 h-1000 col-sm-3 card rounded-5 card-body p-lg-8 mw-md-6 text-black justify-content-center align-items-center h-10" style="height: 700px;">
+          <div>
+            <h1>Login</h1>
+            <br><br><br>
+          </div>
+        
+          <form id = "connectForm" style="display:block">
+            <!-- Email input -->
+            <div class="form-outline mb-4 text-center">
+              <label for="email" style="display: flex;" class="justify-content-center">Email (Required): </label>
+              <input type="text" id="email" name="email" required>
+            </div>
+            <br>
+            <!-- Password input -->
+            <div class="form-outline mb-4 text-center">
+              <label for="mdp" style="display: flex;" class="justify-content-center">Mot de passe (Required):</label>
+              <input type="password" id="mdp" name="mdp" required>
+            </div>
+            <!-- Login button -->
+            <div class="text-center pt-1 mb-5 pb-1">
+              <button id="login">Connect</button>
+            </div>
+            <br><br><br><br><br>
+            <div class="d-flex align-items-center justify-content-center pb-4">
+              <p class="mb-0 me-2">Don't have an account?</p>
+              <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#ModalForm">Create account</button>
+            </div>
+          </form>
+        </div>
+    
+
+      <!-- Create account modal -->
+      <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="myform bg-dark">
+                
+                <section class="row form form-100 gradient-form" style="background-color: rgb(42, 50, 151)">
+                  <div class="container col-sm-12 card rounded-5 card-body p-lg-8 mw-md-6 text-black justify-content-center align-items-center h-10" style="height: 700px;">
+                    <div class="text-center">
+                      <h1 class="text-center">Welcome!</h1>
+                      <div><br><br><br><br></div>
+                      <form id = "createForm" style="display:block">
+                        <label for="firstName">First Name (Required):</label>
+                        <input type="text" id="firstName" name="firstName" required ><br>
+                        <br>
+                        <label for="lastName">Last Name (Required):</label>
+                        <input type="text" id="lastName" name="lastName" required ><br>
+                        <br>
+                        <label for="statu">Status : </label>
+                        <select name="statu" id="statu">
+                            <option value="candidat">Candidat</option>
+                            <option value="entreprise">Entreprise</option>
+                            <option value="admin">Administrateur</option>
+                        </select><br>
+                        <br>
+                        <label for="tel">Téléphone (Required):</label>
+                        <input type="tel" id="tel" name="tel" minlength="10" maxlength="10" required ><br>
+                        <br>
+                        <label for="email">Email (Required):</label>
+                        <input type="email" id="email" name="email" required ><br>
+                        <br>
+                        <label for="mdp1">Mot de passe (Required):</label>
+                        <input type="password" id="mdp1" name="mdp1" required><br>
+                        <span class="error-message" id="mdpError"></span><br>
+                        <br>
+                        <label for="mdp2"> Confirmer Mot de passe (Required):</label>
+                        <input type="password" id="mdp2" name="mdp2" required><br>
+                        <br>
+                        <button id="create">Create</button>
+                      </form>
+                    </div>
+                  </div>
+                </section>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+  </body>
+  </html>
+
+
+
+
+  

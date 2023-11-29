@@ -1,0 +1,71 @@
+ /*global changes*/
+ /*font color*/
+ body{
+    background: linear-gradient(90deg, rgba(113,34,195,1) 0%, rgba(120,54,180,1) 22%, rgba(85,98,158,1) 55%, rgba(48,132,180,1) 83%, rgba(51,121,140,1) 100%); 
+}
+
+/*Index.html column parametres*/
+[class*="col"]{
+    padding: 1rem;
+    background-color: rgb(10, 10, 10);
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+ /*from here login.html*/
+ /*from here create account form*/
+.modal-content {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .modal-body {
+    padding: 0;
+  }
+  /*to put button in the middle*/
+  .btn-close {
+    position: absolute;
+    right: 0;
+    padding: 1em;
+  }
+  h1 {
+    font-size: 2.3em;
+    font-weight: bold;
+  }
+  /*letter color in box*/
+  .myform {
+    padding: 2em;
+    max-width: 100%;
+    color: #fff;
+  }
+  @media (max-width: 576px) {
+    .myform {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+  .form-control:focus {
+    box-shadow: inset 0 -1px 0 #7e7e7e;
+  }
+  /*button Create color box*/
+  .myform .btn {
+    width: 100%;
+    font-weight: 800;
+    background-color: #fff;
+    border-radius: 0;
+    padding: 0.5em 0;
+  }
+  .myform .btn:hover {
+    background-color: inherit;
+    /*btn create letter color*/
+    color: #fff;
+    /*btn create border color when mouse is passed*/
+    border-color: #fff;
+  }
+
+   /*from here right side of login page*/
+  p {
+    text-align: center;
+    padding-top: 2em;
+    color: grey;
+  }
+ 
